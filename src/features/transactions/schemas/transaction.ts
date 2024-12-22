@@ -1,6 +1,7 @@
 import { zCommonFields } from "@/schemas/commonFields";
 import { zTimestamp } from "@/schemas/firebase/timestamp";
 import { z } from "zod";
+import { zTransactionType } from "./transactionType";
 
 export const zTransaction = z
   .object({
@@ -10,6 +11,7 @@ export const zTransaction = z
     transactionId: z.string().min(1),
     bankAccountId: z.string().min(1),
     id: z.string().min(1),
+    type: zTransactionType,
   })
   .merge(zCommonFields);
 

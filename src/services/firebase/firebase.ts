@@ -1,5 +1,7 @@
 import { initializeApp, getApps, FirebaseApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 // We use `NEXT_PUBLIC_` variables for the client side
 const firebaseConfig = {
@@ -20,5 +22,8 @@ if (!getApps().length) {
   firebaseApp = getApps()[0];
 }
 
-export const auth = getAuth(firebaseApp);
+export const firebaseAuth = getAuth(firebaseApp);
+export const firebaseDB = getFirestore(firebaseApp);
+export const firebaseStorage = getStorage(firebaseApp);
+
 export default firebaseApp;

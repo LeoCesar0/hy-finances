@@ -3,12 +3,12 @@ import {
   signInWithPopup,
   UserCredential,
 } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { firebaseAuth } from "@/services/firebase/firebase";
 
 export async function signInWithGoogle(): Promise<UserCredential> {
   const provider = new GoogleAuthProvider();
   try {
-    const result = await signInWithPopup(auth, provider);
+    const result = await signInWithPopup(firebaseAuth, provider);
     return result;
   } catch (error) {
     console.error("Google Sign-In error:", error);
@@ -18,7 +18,7 @@ export async function signInWithGoogle(): Promise<UserCredential> {
 
 export async function signOut() {
   try {
-    await auth.signOut();
+    await firebaseAuth.signOut();
     console.log("Signed out successfully");
   } catch (error) {
     console.error("Sign-out error:", error);

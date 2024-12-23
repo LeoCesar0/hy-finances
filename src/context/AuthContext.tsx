@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
-import { firebaseAuth } from "@/services/firebase/firebase";
+import { firebaseAuth } from "@/server/firebase/firebase";
 
 // 1. Create the context
 interface AuthContextProps {

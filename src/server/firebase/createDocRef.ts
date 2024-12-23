@@ -1,6 +1,6 @@
 import { doc } from "firebase/firestore";
-import { getServerPath } from "./getServerPath";
-import { FirebaseCollection } from "@/schemas/firebase/collections";
+import { getServerPath } from "../getServerPath";
+import { FirebaseCollection } from "@/server/firebase/collections";
 import { firebaseDB } from "./firebase";
 
 export const createDocRef = ({

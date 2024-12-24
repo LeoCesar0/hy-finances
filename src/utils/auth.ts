@@ -3,7 +3,7 @@ import {
   signInWithPopup,
   UserCredential,
 } from "firebase/auth";
-import { firebaseAuth } from "@/server/firebase/firebase";
+import { firebaseAuth } from "@/server/firebase/config";
 
 export async function signInWithGoogle(): Promise<UserCredential> {
   const provider = new GoogleAuthProvider();
